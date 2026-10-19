@@ -36,8 +36,8 @@ layers:
   - LANG1
   - SPACE
   - {t: LANG2, h: '1'}
-  - {t: RETURN, h: '2'}
-  - BSPC
+  - {t: DEL, h: '2'}
+  - ENTER
   - RALT
   - RGUI
   - Sft+/

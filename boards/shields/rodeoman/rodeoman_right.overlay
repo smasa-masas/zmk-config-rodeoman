@@ -6,8 +6,7 @@
     col-offset = <5>;
 };
 
-&trackball_input_listener_1 {
-    status = "okay";
+&trackball_split {
     device = <&trackball>;
     input-processors = <&zip_xy_scaler 8 1>;
 };

@@ -36,7 +36,7 @@ layers:
   - LANG1
   - SPACE
   - {t: LANG2, h: '1'}
-  - {t: DEL, h: '2'}
+  - {t: BACKSPACE, h: '2'}
   - ENTER
   - RALT
   - RGUI

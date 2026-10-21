@@ -143,15 +143,6 @@
     trackball: trackball@a {
         compatible = "palette,az1uball";
         reg = <0x0A>;
-        /* AZ1UBALL V2: INT pin (P0.10) */
-        int-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
         status = "okay";
     };
-};
-
-/* P0.09/P0.10 default to NFC antenna pins on the nRF52840 and won't behave
- * as plain GPIOs (e.g. for the AZ1UBALL INT line on P0.10) unless released
- * here. */
-&uicr {
-    nfct-pins-as-gpios;
 };

@@ -1,0 +1,26 @@
+#include "rodeoman.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+
+&default_transform {
+    col-offset = <5>;
+};
+
+&trackball_input_listener {
+    status = "okay";
+    device = <&trackball>;
+    input-processors =
+        <&zip_xy_scaler 8 1>
+        , <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
+        ;
+};
+
+&xiao_i2c {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    trackball: trackball@a {
+        compatible = "palette,az1uball";
+        reg = <0x0A>;
+        status = "okay";
+    };
+};

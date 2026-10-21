@@ -6,12 +6,9 @@
     col-offset = <5>;
 };
 
-&trackball_split {
+&trackball_input_listener {
+    status = "okay";
     device = <&trackball>;
-    /*
-     * The AZ1UBALL V2 sensor is physically mounted in a mirrored orientation,
-     * so invert both X and Y pointer movement before it reaches the host.
-     */
     input-processors =
         <&zip_xy_scaler 8 1>
         , <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>

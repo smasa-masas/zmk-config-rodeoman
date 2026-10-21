@@ -2,14 +2,10 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&trackball_input_listener_0 {
+&trackball_input_listener {
     status = "okay";
     device = <&trackball>;
     input-processors = <&zip_xy_to_scroll_mapper>
                      , <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>
                      ;
-};
-
-&trackball_input_listener_1 {
-    status = "okay";
 };

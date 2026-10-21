@@ -92,27 +92,6 @@
             , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    trackball_input_listener_0: trackball_input_listener_0 {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-    };
-
-    trackball_input_listener_1: trackball_input_listener_1 {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackball_split>;
-    };
 };
 
 &pinctrl {
@@ -148,8 +127,6 @@
     };
 };
 
-/* P0.09/P0.10 default to NFC antenna pins on the nRF52840 and need to be released
- * before they can be used as normal GPIOs for the AZ1UBALL INT line. */
 &uicr {
     nfct-pins-as-gpios;
 };

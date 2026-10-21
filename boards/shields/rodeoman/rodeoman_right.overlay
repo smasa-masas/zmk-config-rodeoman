@@ -8,7 +8,14 @@
 
 &trackball_split {
     device = <&trackball>;
+    /* The AZ1UBALL V2 sensor is mounted in the opposite orientation to the
+     * expected cursor directions, so invert X and Y before the input reaches
+     * the host.
+     */
     input-processors = <&zip_xy_scaler 8 1>;
+                     , <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) >
+                     , <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) >
+                     ;
 };
 
 &xiao_i2c {

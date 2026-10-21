@@ -8,14 +8,16 @@
 
 &trackball_split {
     device = <&trackball>;
-    /* The AZ1UBALL V2 sensor is mounted in the opposite orientation to the
-     * expected cursor directions, so invert X and Y before the input reaches
-     * the host.
+    /*
+     * AZ1UBALL V2 is mounted with its axes reversed relative to the expected
+     * cursor directions. Use the dedicated X/Y axis inversion processors so
+     * pointer motion follows the physical ball movement instead of its mirror
+     * image.
      */
     input-processors =
         <&zip_xy_scaler 8 1>
-        , <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>
-        , <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>
+        , <&zip_x_invert>
+        , <&zip_y_invert>
         ;
 };
 

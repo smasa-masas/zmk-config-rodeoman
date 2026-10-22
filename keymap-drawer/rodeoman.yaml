@@ -32,8 +32,8 @@ layers:
   - .
   - {t: Sft+INT RO, h: RSHIFT}
   - LCTRL
-  - LEFT ALT
-  - LANG1
+  - LEFT GUI
+  - {t: LANG1, h: LEFT ALT}
   - {t: SPACE, h: '1'}
   - {t: LANG2, h: '4'}
   - {t: BACKSPACE, h: '2'}
@@ -170,7 +170,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp MB1'
   - '&mkp MB1'
   - '&mkp MB2'
   - {t: ▽, type: trans}

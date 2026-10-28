@@ -2,20 +2,16 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&default_transform {
-    col-offset = <5>;
+&trackball_input_listener_0 {
+    status = "okay";
+    device = <&trackball>;
+    input-processors = <&zip_xy_to_scroll_mapper>
+                     , <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>
+                     ;
 };
 
-&trackball_split {
-    device = <&trackball>;
-    /*
-     * The AZ1UBALL V2 sensor is physically mounted in a mirrored orientation,
-     * so invert both X and Y pointer movement before it reaches the host.
-     */
-    input-processors =
-        <&zip_xy_scaler 8 1>
-        , <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
-        ;
+&trackball_input_listener_1 {
+    status = "okay";
 };
 
 &xiao_i2c {

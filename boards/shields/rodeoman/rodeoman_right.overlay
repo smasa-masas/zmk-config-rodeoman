@@ -12,7 +12,6 @@
 
 &trackball_input_listener_1 {
     status = "okay";
-    input = <&trackball>;
 };
 
 &xiao_i2c {

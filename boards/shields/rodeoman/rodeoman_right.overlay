@@ -4,6 +4,8 @@
 
 &trackball_split {
     device = <&trackball>;
+    input-processors = <&zip_xy_scaler 8 1>,
+                       <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 
 &xiao_i2c {
@@ -14,10 +16,5 @@
         compatible = "palette,az1uball";
         reg = <0x0A>;
         status = "okay";
-
-        // トラックボールの分解能（速度）と、上下左右の反転設定
-        input-processors = <&zip_xy_scaler 8 1>
-                         , <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
-                         ;
     };
 };

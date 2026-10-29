@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_split {
-    input = <&trackball>;
+    device = <&trackball>;
 };
 
 &xiao_i2c {

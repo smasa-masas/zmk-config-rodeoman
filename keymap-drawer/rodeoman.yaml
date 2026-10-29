@@ -30,7 +30,7 @@ layers:
   - M
   - ','
   - .
-  - {t: Sft+INT RO, h: RSHIFT}
+  - {t: Sft+INT RO, h: (RSHIFT)}
   - LCTRL
   - LEFT GUI
   - {t: LANG1, h: LEFT ALT}
@@ -98,14 +98,14 @@ layers:
   - '"'
   - ''''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - AltGr+;
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
   - BRI INC
   - {t: ▽, type: trans}
   - ;
-  - ':'
+  - ;
   - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

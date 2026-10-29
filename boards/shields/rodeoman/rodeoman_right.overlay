@@ -2,10 +2,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&trackball_split {
-    input = <&trackball>;
-};
-
 &trackball_input_listener_0 {
     status = "okay";
     device = <&trackball>;

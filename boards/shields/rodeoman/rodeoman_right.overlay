@@ -4,9 +4,14 @@
 
 &trackball_split {
     device = <&trackball>;
-    input-processors =
-        <&zip_xy_scaler 8 1>
-        , <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+&trackball_input_listener {
+    status = "okay";
+    device = <&trackball>;
+    input-processors = <&zip_xy_to_scroll_mapper>
+                     , <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>
+                     ;
 };
 
 &xiao_i2c {
